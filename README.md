@@ -1,69 +1,55 @@
-# <img src="https://keepassxc.org/assets/img/keepassxc.svg" width="40" height="40"/> KeePassXC
+# KeeFortress
 
-[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6326/badge)](https://bestpractices.coreinfrastructure.org/projects/6326)
-[![TeamCity Build Status](https://ci.keepassxc.org/app/rest/builds/buildType:\(project:KeepassXC\)/statusIcon)](https://ci.keepassxc.org/?guest=1)
-[![codecov](https://codecov.io/gh/keepassxreboot/keepassxc/branch/develop/graph/badge.svg)](https://codecov.io/gh/keepassxreboot/keepassxc)
-[![GitHub release](https://img.shields.io/github/release/keepassxreboot/keepassxc)](https://github.com/keepassxreboot/keepassxc/releases/)
+A Windows-first, open-source password manager project based on [KeePassXC](https://github.com/keepassxreboot/keepassxc), with a modern interface and flexible organization for passwords and secure notes.
 
-[![Matrix community channel](https://img.shields.io/matrix/keepassxc:matrix.org?label=Community%20channel)](https://app.element.io/#/room/#keepassxc:mozilla.org)
-[![Matrix development channel](https://img.shields.io/matrix/keepassxc-dev:matrix.org?label=Development%20channel)](https://app.element.io/#/room/#keepassxc-dev:mozilla.org)
+## Project status
 
-[KeePassXC](https://keepassxc.org) is a modern, secure, and open-source password manager that stores and manages your most sensitive information. You can run KeePassXC on Windows, macOS, and Linux systems. KeePassXC is for people with extremely high demands of secure personal data management. It saves many different types of information, such as usernames, passwords, URLs, attachments, and notes in an offline, encrypted file that can be stored in any location, including private and public cloud solutions. For easy identification and management, user-defined titles and icons can be specified for entries. In addition, entries are sorted into customizable groups. An integrated search function allows you to use advanced patterns to easily find any entry in your database. A customizable, fast, and easy-to-use password generator utility allows you to create passwords with any combination of characters or easy to remember passphrases.
+**Early development.** The KeeFortress interface currently exists as a design prototype. It has not yet been added to the desktop app, and no KeeFortress release has been tested for everyday use.
 
-## Quick Start
+The repository starts from KeePassXC's source code. Existing feature lists, build instructions, and release notes came from KeePassXC. They do not mean that KeeFortress has been tested or released. The prototype uses temporary sample data and is not a place to store real passwords or other login details.
 
-The [QuickStart Guide](https://keepassxc.org/docs/KeePassXC_GettingStarted.html) gets you started using KeePassXC on your Windows, macOS, or Linux computer using pre-compiled binaries from the [downloads page](https://keepassxc.org/download). Additionally, individual Linux distributions may ship their own versions, so please check your distribution's package list to see if KeePassXC is available. Detailed documentation is available in the [User Guide](https://keepassxc.org/docs/KeePassXC_UserGuide.html).
+## Our direction
 
-## Features List
+KeeFortress aims to use KeePassXC's existing code for protecting and saving vaults, with an interface that makes everyday tasks easier.
 
-KeePassXC has numerous features for novice and power users alike. Our goal is to create an application that can be used by anyone while still offering advanced features to those that need them.
+Planned interface features include:
 
-### Core Features
+- A compact Home with favorites, frequently used entries, and recent changes.
+- Expandable password categories and a separate Secure Notes area.
+- More than one password in an entry, with one clearly marked as the password used to log in.
+- Organized recovery codes, attachments, and entry history.
+- Archive for old login details worth keeping, and Trash that would keep deleted entries for 30 days.
+- Clear vault creation, locking, and backup settings.
 
-* Create, open, and save databases in the KDBX format (KeePass-compatible with KDBX4 and KDBX3)
-* All information is encrypted at rest and never exposed outside the program
-* Store sensitive information in entries that are organized by groups
-* Password generator
-* Search for entries
-* TOTP storage and generation
-* YubiKey/OnlyKey challenge-response support
-* Auto-Type passwords into applications
-* Browser integration with Google Chrome, Mozilla Firefox, Microsoft Edge, Chromium, Vivaldi, Brave, and Tor-Browser
-* Support for passkeys using the browser integration
-* Entry icon download
-* Import databases from CSV, 1Password, Bitwarden, Proton Pass, and KeePass1 formats
+These are development plans, not a list of completed features. See the [roadmap](ROADMAP.md).
 
-### Advanced
-* Database reports (password health, HIBP, and statistics)
-* Database export to CSV, XML, and HTML formats
-* TOTP storage and generation
-* Field references between entries
-* File attachments and custom attributes
-* Entry history and data restoration
-* Command line interface (keepassxc-cli)
-* SSH Agent integration
-* FreeDesktop.org Secret Service (replace Gnome keyring, etc.)
-* Additional encryption choices: Twofish and ChaCha20
+## Vaults and compatibility
 
-For a full list of changes, read the [CHANGELOG](CHANGELOG.md) document. \
-For a full list of keyboard shortcuts, see [KeyboardShortcuts.adoc](./docs/topics/KeyboardShortcuts.adoc)
+The goal is to use local, encrypted `.kdbx` vault files and preserve compatibility with KeePassXC. One vault would be open at a time in the proposed interface. No KeeFortress online account or hosted storage service is planned for the initial version.
 
-## Building KeePassXC
+Formatted notes and extra information saved with entries need testing before release. We will document how they appear in other apps that open KDBX vault files and verify that opening and saving a vault does not unexpectedly lose data. See [how the app will work](docs/keefortress/ARCHITECTURE.md).
 
-Detailed instructions are available in the [Build and Install](./INSTALL.md) page and in the [Wiki](https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC).
+## Platforms and builds
 
-## Contributing
+Windows is the first target. macOS is a later goal; iOS is a possibility that needs more planning. Support for other operating systems has not been decided.
 
-We are always looking for suggestions on how to improve KeePassXC. If you find any bugs or have an idea for a new feature, please let us know by opening a report in the [issue tracker](https://github.com/keepassxreboot/keepassxc/issues) on GitHub, or join us on [Matrix community channel](https://matrix.to/#/!zUxwGnFkUyycpxeHeM:matrix.org?via=matrix.org) or [Matrix development channel](https://matrix.to/#/!RhJPJPGwQIFVQeXqZa:matrix.org?via=matrix.org), or on IRC in [Libera.Chat](https://web.libera.chat/) channels #keepassxc and #keepassxc-dev.
+The first step is to build the original KeePassXC app for Windows. Then we will add opening, editing, saving, and locking vaults through the KeeFortress interface. See [development](docs/keefortress/DEVELOPMENT.md). The inherited [INSTALL.md](INSTALL.md) explains how to build KeePassXC.
 
-You may directly contribute your own code by submitting a pull request. Please read the [CONTRIBUTING](.github/CONTRIBUTING.md) document for further information.
+## Participate
 
-Contributors are required to adhere to the project's [Code of Conduct](CODE-OF-CONDUCT.md).
+- Report ordinary bugs or suggest improvements in [KeeFortress Issues](https://github.com/nrtak/keefortress/issues).
+- Read the [contribution guidelines](.github/CONTRIBUTING.md) before submitting changes.
+- Follow the [code of conduct](CODE-OF-CONDUCT.md).
+- Report security weaknesses by following [SECURITY.md](SECURITY.md), never in a public issue.
 
-## Generative AI
+## Relationship to KeePassXC
 
-Generative AI is fast becoming a first-party feature in most development environments, including GitHub itself. If the majority of a code submission is made using Generative AI (e.g., agent-based or vibe coding) then **we will document that in the pull request.** All code submissions go through a rigorous review process regardless of the development workflow or submitter.
+KeeFortress is an independent fork. It is not an official KeePassXC release and is not presented as approved by the KeePassXC team. KeePassXC maintainers are not responsible for KeeFortress changes, support, or releases.
 
-## License
+We plan to review KeePassXC updates regularly, bring in relevant fixes, and test them. KeeFortress will not update automatically when KeePassXC releases a new version. See [bringing in KeePassXC updates](docs/keefortress/UPSTREAM.md).
 
-KeePassXC code is licensed under GPL-2 or GPL-3. Additional licensing for third-party files is detailed in [COPYING](./COPYING).
+## License and acknowledgments
+
+KeeFortress keeps the GNU GPL version 2 or, at your option, version 3 license used by KeePassXC. Some files from other projects have their own license terms. See [COPYING](COPYING), [GPL-2](LICENSE.GPL-2), [GPL-3](LICENSE.GPL-3), and the other license files in this repository.
+
+Original copyright notices, source headers, and third-party notices are retained. See [acknowledgments](ACKNOWLEDGMENTS.md). The inherited [CHANGELOG.md](CHANGELOG.md) records KeePassXC release history; KeeFortress changes are tracked [separately](docs/keefortress/CHANGELOG.md).

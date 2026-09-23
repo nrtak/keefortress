@@ -1,20 +1,20 @@
-# Contributor Code of Conduct
+# KeeFortress code of conduct
 
-KeePassXC is an open project that welcomes everybody no matter their ethnicity, sex,
-sexual identity or orientation, age, socio-economic status, nationality, or religion.
-Regardless of what background you come from, feel encouraged to participate in
-the project and express your views as long you are respectful to others.
+We welcome contributors of all backgrounds and experience levels. Treat people respectfully, discuss ideas on their merits, and make room for questions and constructive disagreement.
 
-We value all members of our community and so in order to ensure a harassment-free
-experience for everyone and mutual respect among members of this community, we
-impose the following simple rules:
+## Expected behavior
 
-- No bullying, no insults. Any form of harassment will not be tolerated.
-- No racism, no sexism, no homophobia, no hurtful extremist views of any kind.
-- Be mindful of what you say, be diligent in how you say it.
-- Show respect and, as always, be excellent to each other.
+- Give specific, helpful feedback and accept good-faith corrections.
+- Respect personal boundaries, privacy, and differing perspectives.
+- Keep discussions relevant and avoid personal attacks.
+- Never post another person's private information or passwords.
 
-Violations of these rules or any other form of abuse can be reported confidentially
-to conduct AT keepassxc DOT org. Members who do not adhere to our code of conduct
-will be banned either permanently or until they change their ways so as to be
-compatible with a friendly, open, and inclusive community.
+Harassment, threats, discrimination, sexual harassment, sharing someone’s private information without permission, and sustained disruptive behavior are not acceptable.
+
+## Moderation and reporting
+
+The KeeFortress repository maintainers moderate this project's issues, pull requests, and other project-managed spaces. They may remove content, close or lock discussions, restrict participation, or block accounts according to the severity and context of the behavior.
+
+We have not set up a private contact address for reports about behavior yet. For public misconduct, use GitHub's available reporting tools or flag the relevant public discussion for maintainers without repeating private information. Do not post confidential reports publicly. KeePassXC's conduct address is not a reporting channel for this independent fork.
+
+Maintainers should establish a private contact method before opening additional community spaces. Reports should be handled privately. It is not acceptable to threaten or punish someone for reporting a concern honestly.
